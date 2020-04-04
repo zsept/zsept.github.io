@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>z`note</title>
+    <link>http://zsept.com/</link>
+    <description>Recent content on z`note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>z</copyright>
+    <lastBuildDate>Sat, 04 Apr 2020 12:35:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://zsept.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://zsept.com/about/</link>
+      <pubDate>Sat, 04 Apr 2020 12:35:00 +0800</pubDate>
+      
+      <guid>http://zsept.com/about/</guid>
+      <description>use theme hello-friend</description>
+    </item>
+    
+  </channel>
+</rss>
