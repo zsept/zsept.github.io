@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/z/Workspace/zsept.github.io",
+	"sourceRoot": "/home/z/Workspace/zblog/zblog_hugo",
 	"sources": [
 		"themes/hello-friend-ng-z/assets/scss/main.scss",
 		"themes/hello-friend-ng-z/assets/scss/_normalize.scss",
