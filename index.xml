@@ -21,5 +21,18 @@
       <description>use theme hello-friend</description>
     </item>
     
+    <item>
+      <title>C&#43;&#43; Compile</title>
+      <link>https://zsept.cn/posts/cpp_compile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsept.cn/posts/cpp_compile/</guid>
+      <description>Overview   source file =====&amp;gt; preprocessing =====&amp;gt; complitation =====&amp;gt; Link
+g++ -std=c++11 main_test.cpp -o main_test   Preprocessing  preprocessor changes the progrPreprocessingam according to the directives mentioned (that starts with # sign).
+C++ supports many preprocessor directives like #include, #define, #if, #else etc.
+  preprocess g++ -std=c++11 -E main_test.cpp -o main_test.i   Complitation  translates the program into a low level assembly level code.
+   assembly</description>
+    </item>
+    
   </channel>
 </rss>

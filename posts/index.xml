@@ -1,0 +1,71 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on z`note</title>
+        <link>https://zsept.cn/posts/</link>
+        <description>Recent content in Posts on z`note</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>z</copyright>
+        <atom:link href="https://zsept.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>C&#43;&#43; Compile</title>
+            <link>https://zsept.cn/posts/cpp_compile/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            
+            <guid>https://zsept.cn/posts/cpp_compile/</guid>
+            <description>Overview   source file =====&amp;gt; preprocessing =====&amp;gt; complitation =====&amp;gt; Link
+g++ -std=c++11 main_test.cpp -o main_test   Preprocessing  preprocessor changes the progrPreprocessingam according to the directives mentioned (that starts with # sign).
+C++ supports many preprocessor directives like #include, #define, #if, #else etc.
+  preprocess g++ -std=c++11 -E main_test.cpp -o main_test.i   Complitation  translates the program into a low level assembly level code.
+   assembly</description>
+            <content type="html"><![CDATA[<h2 id="overview">Overview</h2>
+<ul>
+<li>
+<p><strong>source file =====&gt; preprocessing =====&gt; complitation  =====&gt; Link</strong></p>
+<pre><code>g++ -std=c++11 main_test.cpp -o main_test
+</code></pre></li>
+</ul>
+<h2 id="preprocessing">Preprocessing</h2>
+<blockquote>
+<p>preprocessor changes the progrPreprocessingam according to the directives mentioned (that starts with # sign).</p>
+<p>C++ supports many preprocessor directives like <strong>#include, #define, #if, #else</strong> etc.</p>
+</blockquote>
+<ul>
+<li>preprocess
+<pre><code>g++ -std=c++11 -E main_test.cpp -o main_test.i
+</code></pre></li>
+</ul>
+<h2 id="complitation">Complitation</h2>
+<blockquote>
+<p>translates the program into a low level assembly level code.</p>
+</blockquote>
+<ul>
+<li>
+<p>assembly</p>
+<pre><code>g++ -std=c++11 -S main_test.i -o main_test.s
+</code></pre></li>
+<li>
+<p>comiple to Target object file(.o)</p>
+<pre><code>g++ -std=c++11 -c main_test.s -o main_test.o
+</code></pre><p>use command <code>readelf -all main_test.o</code> read file</p>
+</li>
+</ul>
+<h2 id="link">Link</h2>
+<blockquote>
+<p>refers to creation of a single executable file from multiple object files.</p>
+</blockquote>
+<ul>
+<li>link
+<pre><code>g++ -std=c++11 main_test.o -o main_test
+</code></pre></li>
+</ul>
+<h2 id="references">References</h2>
+<p>[1] <a href="https://en.cppreference.com/w/cpp/compiler_support">https://en.cppreference.com/w/cpp/compiler_support</a></p>
+<p>[2] <a href="https://www.cplusplus.com/articles/2v07M4Gy/">https://www.cplusplus.com/articles/2v07M4Gy</a></p>
+<p>[3] <a href="https://blog.csdn.net/CSDN_Violin/article/details/79430384">https://blog.csdn.net/CSDN_Violin/article/details/79430384</a></p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
