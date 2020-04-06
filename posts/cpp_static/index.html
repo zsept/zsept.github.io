@@ -5,20 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Overview   source file =====&amp;gt; preprocessing =====&amp;gt; complitation =====&amp;gt; Link
-g&#43;&#43; -std=c&#43;&#43;11 main_test.cpp -o main_test   Preprocessing  preprocessor changes the progrPreprocessingam according to the directives mentioned (that starts with # sign).
-C&#43;&#43; supports many preprocessor directives like #include, #define, #if, #else etc.
-  preprocess g&#43;&#43; -std=c&#43;&#43;11 -E main_test.cpp -o main_test.i   Complitation  translates the program into a low level assembly level code.
-   assembly" />
+<meta name="description" content="Storage class specifiers static is Storage class specifiers. (auto, extern, thread_local, mutable).
+References [1]https://en.cppreference.com/w/cpp/language/storage_duration" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://zsept.cn/posts/cpp_compile/" />
+<link rel="canonical" href="https://zsept.cn/posts/cpp_static/" />
 
 
     <title>
         
-            C&#43;&#43; Compile :: z`note 
+            C&#43;&#43; static :: z`note 
         
     </title>
 
@@ -34,25 +31,19 @@ C&#43;&#43; supports many preprocessor directives like #include, #define, #if, #
 
 
 
-<meta itemprop="name" content="C&#43;&#43; Compile">
-<meta itemprop="description" content="Overview   source file =====&gt; preprocessing =====&gt; complitation =====&gt; Link
-g&#43;&#43; -std=c&#43;&#43;11 main_test.cpp -o main_test   Preprocessing  preprocessor changes the progrPreprocessingam according to the directives mentioned (that starts with # sign).
-C&#43;&#43; supports many preprocessor directives like #include, #define, #if, #else etc.
-  preprocess g&#43;&#43; -std=c&#43;&#43;11 -E main_test.cpp -o main_test.i   Complitation  translates the program into a low level assembly level code.
-   assembly">
+<meta itemprop="name" content="C&#43;&#43; static">
+<meta itemprop="description" content="Storage class specifiers static is Storage class specifiers. (auto, extern, thread_local, mutable).
+References [1]https://en.cppreference.com/w/cpp/language/storage_duration">
 <meta itemprop="datePublished" content="2020-04-05T00:58:12&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-05T00:58:12&#43;08:00" />
-<meta itemprop="wordCount" content="109">
+<meta itemprop="wordCount" content="14">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="C&#43;&#43; Compile"/>
-<meta name="twitter:description" content="Overview   source file =====&gt; preprocessing =====&gt; complitation =====&gt; Link
-g&#43;&#43; -std=c&#43;&#43;11 main_test.cpp -o main_test   Preprocessing  preprocessor changes the progrPreprocessingam according to the directives mentioned (that starts with # sign).
-C&#43;&#43; supports many preprocessor directives like #include, #define, #if, #else etc.
-  preprocess g&#43;&#43; -std=c&#43;&#43;11 -E main_test.cpp -o main_test.i   Complitation  translates the program into a low level assembly level code.
-   assembly"/>
+<meta name="twitter:title" content="C&#43;&#43; static"/>
+<meta name="twitter:description" content="Storage class specifiers static is Storage class specifiers. (auto, extern, thread_local, mutable).
+References [1]https://en.cppreference.com/w/cpp/language/storage_duration"/>
 
 
 
@@ -128,57 +119,16 @@ C&#43;&#43; supports many preprocessor directives like #include, #define, #if, #
 
         <article>
             <h1 class="post-title">
-                <a href="https://zsept.cn/posts/cpp_compile/">C++ Compile</a>
+                <a href="https://zsept.cn/posts/cpp_static/">C++ static</a>
             </h1>
 
             
 
             <div class="post-content">
-                <h2 id="overview">Overview</h2>
-<ul>
-<li>
-<p><strong>source file =====&gt; preprocessing =====&gt; complitation  =====&gt; Link</strong></p>
-<pre><code>g++ -std=c++11 main_test.cpp -o main_test
-</code></pre></li>
-</ul>
-<h2 id="preprocessing">Preprocessing</h2>
-<blockquote>
-<p>preprocessor changes the progrPreprocessingam according to the directives mentioned (that starts with # sign).</p>
-<p>C++ supports many preprocessor directives like <strong>#include, #define, #if, #else</strong> etc.</p>
-</blockquote>
-<ul>
-<li>preprocess
-<pre><code>g++ -std=c++11 -E main_test.cpp -o main_test.i
-</code></pre></li>
-</ul>
-<h2 id="complitation">Complitation</h2>
-<blockquote>
-<p>translates the program into a low level assembly level code.</p>
-</blockquote>
-<ul>
-<li>
-<p>assembly</p>
-<pre><code>g++ -std=c++11 -S main_test.i -o main_test.s
-</code></pre></li>
-<li>
-<p>comiple to Target object file(.o)</p>
-<pre><code>g++ -std=c++11 -c main_test.s -o main_test.o
-</code></pre><p>use command <code>readelf -all main_test.o</code> read file</p>
-</li>
-</ul>
-<h2 id="link">Link</h2>
-<blockquote>
-<p>refers to creation of a single executable file from multiple object files.</p>
-</blockquote>
-<ul>
-<li>link
-<pre><code>g++ -std=c++11 main_test.o -o main_test
-</code></pre></li>
-</ul>
+                <h2 id="storage-class-specifiers">Storage class specifiers</h2>
+<p>static is Storage class specifiers. (auto, extern, thread_local, mutable).</p>
 <h2 id="references">References</h2>
-<p>[1] <a href="https://en.cppreference.com/w/cpp/compiler_support">https://en.cppreference.com/w/cpp/compiler_support</a></p>
-<p>[2] <a href="https://www.cplusplus.com/articles/2v07M4Gy/">https://www.cplusplus.com/articles/2v07M4Gy</a></p>
-<p>[3] <a href="https://blog.csdn.net/CSDN_Violin/article/details/79430384">https://blog.csdn.net/CSDN_Violin/article/details/79430384</a></p>
+<p>[1]<a href="https://en.cppreference.com/w/cpp/language/storage_duration">https://en.cppreference.com/w/cpp/language/storage_duration</a></p>
 
             </div>
         </article>
@@ -187,7 +137,7 @@ C&#43;&#43; supports many preprocessor directives like #include, #define, #if, #
 
         <div class="post-info">
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>109 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>14 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-05 00:58 &#43;0800</p>
         </div>
@@ -202,17 +152,17 @@ C&#43;&#43; supports many preprocessor directives like #include, #define, #if, #
                 <div class="pagination__buttons">
                     
                         <span class="button previous">
-                            <a href="https://zsept.cn/posts/cpp_misc/">
+                            <a href="https://zsept.cn/posts/cpp_compile/">
                                 <span class="button__icon">←</span>
-                                <span class="button__text">C&#43;&#43; static</span>
+                                <span class="button__text">C&#43;&#43; Compile</span>
                             </a>
                         </span>
                     
 
                     
                         <span class="button next">
-                            <a href="https://zsept.cn/posts/cpp_static/">
-                                <span class="button__text">C&#43;&#43; static</span>
+                            <a href="https://zsept.cn/posts/cpp_virtual/">
+                                <span class="button__text">C&#43;&#43; Virtual</span>
                                 <span class="button__icon">→</span>
                             </a>
                         </span>

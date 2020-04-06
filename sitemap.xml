@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zsept.cn/posts/linux_elf/</loc>
+    <lastmod>2020-04-06T18:50:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zsept.cn/posts/</loc>
+    <lastmod>2020-04-06T18:50:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zsept.cn/posts/cpp_misc/</loc>
+    <lastmod>2020-04-05T18:11:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zsept.cn/posts/cpp_compile/</loc>
+    <lastmod>2020-04-05T00:58:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zsept.cn/posts/cpp_static/</loc>
+    <lastmod>2020-04-05T00:58:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zsept.cn/posts/cpp_virtual/</loc>
+    <lastmod>2020-04-05T00:58:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zsept.cn/posts/cpp_vimrc/</loc>
+    <lastmod>2020-04-05T00:58:12+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zsept.cn/about/</loc>
     <lastmod>2020-04-04T12:35:00+08:00</lastmod>
   </url>
@@ -13,23 +48,11 @@
   </url>
   
   <url>
-    <loc>https://zsept.cn/posts/cpp_compile/</loc>
-  </url>
-  
-  <url>
     <loc>https://zsept.cn/categories/</loc>
   </url>
   
   <url>
-    <loc>https://zsept.cn/posts/</loc>
-  </url>
-  
-  <url>
     <loc>https://zsept.cn/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://zsept.cn/posts/cpp_vimrc/</loc>
   </url>
   
 </urlset>

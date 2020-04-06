@@ -13,18 +13,33 @@
     
     
     <item>
-      <title>About</title>
-      <link>https://zsept.cn/about/</link>
-      <pubDate>Sat, 04 Apr 2020 12:35:00 +0800</pubDate>
+      <title>Linux ELF</title>
+      <link>https://zsept.cn/posts/linux_elf/</link>
+      <pubDate>Mon, 06 Apr 2020 18:50:55 +0800</pubDate>
       
-      <guid>https://zsept.cn/about/</guid>
-      <description>use theme hello-friend</description>
+      <guid>https://zsept.cn/posts/linux_elf/</guid>
+      <description>References [1]https://linux.die.net/man/5/elf
+[2]https://elinux.org/Executable_and_Linkable_Format_(ELF)
+[3]ftp.openwatcom.org/devel/docs/elf-64-gen.pdf</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; static</title>
+      <link>https://zsept.cn/posts/cpp_misc/</link>
+      <pubDate>Sun, 05 Apr 2020 18:11:22 +0800</pubDate>
+      
+      <guid>https://zsept.cn/posts/cpp_misc/</guid>
+      <description>  const char s[]
+在c中, 建议使用第二种方式
+const char s[3] = &amp;#34;abc&amp;#34;; // no &amp;#39;\0&amp;#39; const char s[] = &amp;#34;abc&amp;#34;; // has &amp;#39;\0&amp;#39;   std::string
+// defined in &amp;lt;string&amp;gt; using string = basic_string&amp;lt;char&amp;gt;; using u8string = basic_string&amp;lt;char8_t&amp;gt;; using u16string = basic_string&amp;lt;char16_t&amp;gt;; using u32string = basic_string&amp;lt;char32_t&amp;gt;; using wstring = basic_string&amp;lt;wchar_t&amp;gt;;   进程内存的精确组织形式依赖于操作系统，编译器，连接器
+  </description>
     </item>
     
     <item>
       <title>C&#43;&#43; Compile</title>
       <link>https://zsept.cn/posts/cpp_compile/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Apr 2020 00:58:12 +0800</pubDate>
       
       <guid>https://zsept.cn/posts/cpp_compile/</guid>
       <description>Overview   source file =====&amp;gt; preprocessing =====&amp;gt; complitation =====&amp;gt; Link
@@ -35,12 +50,40 @@ C++ supports many preprocessor directives like #include, #define, #if, #else etc
     </item>
     
     <item>
+      <title>C&#43;&#43; static</title>
+      <link>https://zsept.cn/posts/cpp_static/</link>
+      <pubDate>Sun, 05 Apr 2020 00:58:12 +0800</pubDate>
+      
+      <guid>https://zsept.cn/posts/cpp_static/</guid>
+      <description>Storage class specifiers static is Storage class specifiers. (auto, extern, thread_local, mutable).
+References [1]https://en.cppreference.com/w/cpp/language/storage_duration</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Virtual</title>
+      <link>https://zsept.cn/posts/cpp_virtual/</link>
+      <pubDate>Sun, 05 Apr 2020 00:58:12 +0800</pubDate>
+      
+      <guid>https://zsept.cn/posts/cpp_virtual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vim .vimrc</title>
       <link>https://zsept.cn/posts/cpp_vimrc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Apr 2020 00:58:12 +0800</pubDate>
       
       <guid>https://zsept.cn/posts/cpp_vimrc/</guid>
       <description>&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;plug&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot;&amp;quot; &amp;quot; specify a directory for plugins &amp;quot; - For Neovim: ~/.local/share/nvim/plugged &amp;quot; - Avoid using standard Vim directory names like &#39;plugin&#39; call plug#begin(&#39;~/.vim/plugged&#39;) &amp;quot; Make sure you use single quotes &amp;quot; Shorthand notation; fetches https://github.com/junegunn/vim-easy-align &amp;quot; Plug &#39;junegunn/vim-easy-align&#39; &amp;quot; Any valid git URL is allowed &amp;quot; Plug &#39;https://github.com/junegunn/vim-github-dashboard.git&#39; &amp;quot; Multiple Plug commands can be written in a single line using | separators &amp;quot; Plug &#39;SirVer/ultisnips&#39; | Plug &#39;honza/vim-snippets&#39; &amp;quot; On-demand loading Plug &#39;scrooloose/nerdtree&#39;, { &#39;on&#39;: &#39;NERDTreeToggle&#39; } &amp;quot; Plug &#39;tpope/vim-fireplace&#39;, { &#39;for&#39;: &#39;clojure&#39; } &amp;quot; Using a non-master branch &amp;quot; Plug &#39;rdnetto/YCM-Generator&#39;, { &#39;branch&#39;: &#39;stable&#39; } &amp;quot; Using a tagged release; wildcard allowed (requires git 1.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://zsept.cn/about/</link>
+      <pubDate>Sat, 04 Apr 2020 12:35:00 +0800</pubDate>
+      
+      <guid>https://zsept.cn/about/</guid>
+      <description>use theme hello-friend</description>
     </item>
     
   </channel>
