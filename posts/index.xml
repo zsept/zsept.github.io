@@ -6,8 +6,21 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>z</copyright>
-        <lastBuildDate>Tue, 05 May 2020 21:53:12 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 21 May 2020 20:38:12 +0800</lastBuildDate>
         <atom:link href="https://zsept.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>C&#43;&#43; Compile</title>
+            <link>https://zsept.cn/posts/math/summary/</link>
+            <pubDate>Thu, 21 May 2020 20:38:12 +0800</pubDate>
+            
+            <guid>https://zsept.cn/posts/math/summary/</guid>
+            <description>Learning Metarials 1.3Blue1Grown https://space.bilibili.com/88461692/video?tid=0&amp;amp;page=4&amp;amp;keyword=&amp;amp;order=pubdate</description>
+            <content type="html"><![CDATA[<h2 id="learning-metarials">Learning Metarials</h2>
+<p>1.3Blue1Grown
+<a href="https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate">https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>[Algorithm] Fibonacci</title>
@@ -501,18 +514,6 @@ call one#highlight('Search', 'eec900', '', 'underline')
 
 
 </code></pre>]]></content>
-        </item>
-        
-        <item>
-            <title></title>
-            <link>https://zsept.cn/posts/math/summary/</link>
-            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-            
-            <guid>https://zsept.cn/posts/math/summary/</guid>
-            <description>1.3Blue1Grown https://space.bilibili.com/88461692/video?tid=0&amp;amp;page=4&amp;amp;keyword=&amp;amp;order=pubdate</description>
-            <content type="html"><![CDATA[<p>1.3Blue1Grown
-<a href="https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate">https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate</a></p>
-]]></content>
         </item>
         
     </channel>

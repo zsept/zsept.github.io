@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>C&#43;&#43; Compile</title>
+      <link>https://zsept.cn/posts/math/summary/</link>
+      <pubDate>Thu, 21 May 2020 20:38:12 +0800</pubDate>
+      
+      <guid>https://zsept.cn/posts/math/summary/</guid>
+      <description>Learning Metarials 1.3Blue1Grown https://space.bilibili.com/88461692/video?tid=0&amp;amp;page=4&amp;amp;keyword=&amp;amp;order=pubdate</description>
+    </item>
+    
+    <item>
       <title>[Algorithm] Fibonacci</title>
       <link>https://zsept.cn/posts/algorithm/fibnoacci/</link>
       <pubDate>Tue, 05 May 2020 21:53:12 +0800</pubDate>
@@ -91,15 +100,6 @@ References [1]https://en.cppreference.com/w/cpp/language/storage_duration</descr
       
       <guid>https://zsept.cn/about/</guid>
       <description>use theme hello-friend</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zsept.cn/posts/math/summary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zsept.cn/posts/math/summary/</guid>
-      <description>1.3Blue1Grown https://space.bilibili.com/88461692/video?tid=0&amp;amp;page=4&amp;amp;keyword=&amp;amp;order=pubdate</description>
     </item>
     
   </channel>
