@@ -13,14 +13,21 @@
     
     
     <item>
+      <title>[Algorithm] Fibonacci</title>
+      <link>https://zsept.cn/posts/algorithm/fibnoacci/</link>
+      <pubDate>Tue, 05 May 2020 21:53:12 +0800</pubDate>
+      
+      <guid>https://zsept.cn/posts/algorithm/fibnoacci/</guid>
+      <description>Fibonacci 递归 uint64_t fibonacci(uint64_t n) { if (n &amp;gt; 1) { return fibonacci(n -1) + fibonacci(n -2); } else { return n; } } 非递归 uint64_t fibonacci_1(uint64_t n) { if (n &amp;lt; 2) { return n; } uint64_t fn = 0; uint64_t fn0 = 0; uint64_t fn1 = 1; uint64_t count = 2; while (count &amp;lt;= n) { fn = fn0 + fn1; fn0 = fn1; fn1 = fn; count++; } return fn; } 矩阵 std::pair&amp;lt;uint64_t, uint64_t&amp;gt; fibonacci_3(size_t n) { // 返回F_{n}和F_{n + 1}, 注意是对UINT64_MAX取模的结果.</description>
+    </item>
+    
+    <item>
       <title>Linux ELF</title>
       <link>https://zsept.cn/posts/linux_elf/</link>
       <pubDate>Mon, 06 Apr 2020 18:50:55 +0800</pubDate>
       
       <guid>https://zsept.cn/posts/linux_elf/</guid>
-      <description>References [1]https://linux.die.net/man/5/elf
-[2]https://elinux.org/Executable_and_Linkable_Format_(ELF)
-[3]ftp.openwatcom.org/devel/docs/elf-64-gen.pdf</description>
+      <description>ELF HEADER Section Headers: [Nr] Name Type Address Off Size ES Flg Lk Inf Al [ 0] NULL 0000000000000000 000000 000000 00 0 0 0 [ 1] .interp PROGBITS 00000000000002a8 0002a8 00001c 00 A 0 0 1 [ 2] .note.gnu.build-id NOTE 00000000000002c4 0002c4 000024 00 A 0 0 4 [ 3] .note.ABI-tag NOTE 00000000000002e8 0002e8 000020 00 A 0 0 4 [ 4] .gnu.hash GNU_HASH 0000000000000308 000308 00001c 00 A 5 0 8 [ 5] .</description>
     </item>
     
     <item>
@@ -84,6 +91,15 @@ References [1]https://en.cppreference.com/w/cpp/language/storage_duration</descr
       
       <guid>https://zsept.cn/about/</guid>
       <description>use theme hello-friend</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://zsept.cn/posts/math/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsept.cn/posts/math/summary/</guid>
+      <description>1.3Blue1Grown https://space.bilibili.com/88461692/video?tid=0&amp;amp;page=4&amp;amp;keyword=&amp;amp;order=pubdate</description>
     </item>
     
   </channel>

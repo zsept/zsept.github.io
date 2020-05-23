@@ -5,9 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="References [1]https://linux.die.net/man/5/elf
-[2]https://elinux.org/Executable_and_Linkable_Format_(ELF)
-[3]ftp.openwatcom.org/devel/docs/elf-64-gen.pdf" />
+<meta name="description" content="ELF HEADER Section Headers: [Nr] Name Type Address Off Size ES Flg Lk Inf Al [ 0] NULL 0000000000000000 000000 000000 00 0 0 0 [ 1] .interp PROGBITS 00000000000002a8 0002a8 00001c 00 A 0 0 1 [ 2] .note.gnu.build-id NOTE 00000000000002c4 0002c4 000024 00 A 0 0 4 [ 3] .note.ABI-tag NOTE 00000000000002e8 0002e8 000020 00 A 0 0 4 [ 4] .gnu.hash GNU_HASH 0000000000000308 000308 00001c 00 A 5 0 8 [ 5] ." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -33,20 +31,16 @@
 
 
 <meta itemprop="name" content="Linux ELF">
-<meta itemprop="description" content="References [1]https://linux.die.net/man/5/elf
-[2]https://elinux.org/Executable_and_Linkable_Format_(ELF)
-[3]ftp.openwatcom.org/devel/docs/elf-64-gen.pdf">
+<meta itemprop="description" content="ELF HEADER Section Headers: [Nr] Name Type Address Off Size ES Flg Lk Inf Al [ 0] NULL 0000000000000000 000000 000000 00 0 0 0 [ 1] .interp PROGBITS 00000000000002a8 0002a8 00001c 00 A 0 0 1 [ 2] .note.gnu.build-id NOTE 00000000000002c4 0002c4 000024 00 A 0 0 4 [ 3] .note.ABI-tag NOTE 00000000000002e8 0002e8 000020 00 A 0 0 4 [ 4] .gnu.hash GNU_HASH 0000000000000308 000308 00001c 00 A 5 0 8 [ 5] .">
 <meta itemprop="datePublished" content="2020-04-06T18:50:55&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-06T18:50:55&#43;08:00" />
-<meta itemprop="wordCount" content="4">
+<meta itemprop="wordCount" content="347">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux ELF"/>
-<meta name="twitter:description" content="References [1]https://linux.die.net/man/5/elf
-[2]https://elinux.org/Executable_and_Linkable_Format_(ELF)
-[3]ftp.openwatcom.org/devel/docs/elf-64-gen.pdf"/>
+<meta name="twitter:description" content="ELF HEADER Section Headers: [Nr] Name Type Address Off Size ES Flg Lk Inf Al [ 0] NULL 0000000000000000 000000 000000 00 0 0 0 [ 1] .interp PROGBITS 00000000000002a8 0002a8 00001c 00 A 0 0 1 [ 2] .note.gnu.build-id NOTE 00000000000002c4 0002c4 000024 00 A 0 0 4 [ 3] .note.ABI-tag NOTE 00000000000002e8 0002e8 000020 00 A 0 0 4 [ 4] .gnu.hash GNU_HASH 0000000000000308 000308 00001c 00 A 5 0 8 [ 5] ."/>
 
 
 
@@ -113,7 +107,7 @@
     <main class="post">
 
         <div class="post-info">
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>One minute
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>2 minutes
 
             
 
@@ -128,7 +122,40 @@
             
 
             <div class="post-content">
-                <h2 id="references">References</h2>
+                <h2 id="elf-header">ELF HEADER</h2>
+<pre><code>Section Headers:
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1] .interp           PROGBITS        00000000000002a8 0002a8 00001c 00   A  0   0  1
+  [ 2] .note.gnu.build-id NOTE           00000000000002c4 0002c4 000024 00   A  0   0  4
+  [ 3] .note.ABI-tag     NOTE            00000000000002e8 0002e8 000020 00   A  0   0  4
+  [ 4] .gnu.hash         GNU_HASH        0000000000000308 000308 00001c 00   A  5   0  8
+  [ 5] .dynsym           DYNSYM          0000000000000328 000328 0000d8 18   A  6   1  8
+  [ 6] .dynstr           STRTAB          0000000000000400 000400 0000ed 00   A  0   0  1
+  [ 7] .gnu.version      VERSYM          00000000000004ee 0004ee 000012 02   A  5   0  2
+  [ 8] .gnu.version_r    VERNEED         0000000000000500 000500 000040 00   A  6   2  8
+  [ 9] .rela.dyn         RELA            0000000000000540 000540 0000f0 18   A  5   0  8
+  [10] .rela.plt         RELA            0000000000000630 000630 000030 18  AI  5  22  8
+  [11] .init             PROGBITS        0000000000001000 001000 00001b 00  AX  0   0  4
+  [12] .plt              PROGBITS        0000000000001020 001020 000030 10  AX  0   0 16
+  [13] .text             PROGBITS        0000000000001050 001050 000205 00  AX  0   0 16
+  [14] .fini             PROGBITS        0000000000001258 001258 00000d 00  AX  0   0  4
+  [15] .rodata           PROGBITS        0000000000002000 002000 000005 00   A  0   0  4
+  [16] .eh_frame_hdr     PROGBITS        0000000000002008 002008 000044 00   A  0   0  4
+  [17] .eh_frame         PROGBITS        0000000000002050 002050 000118 00   A  0   0  8
+  [18] .init_array       INIT_ARRAY      0000000000003da8 002da8 000010 08  WA  0   0  8
+  [19] .fini_array       FINI_ARRAY      0000000000003db8 002db8 000008 08  WA  0   0  8
+  [20] .dynamic          DYNAMIC         0000000000003dc0 002dc0 000210 10  WA  6   0  8
+  [21] .got              PROGBITS        0000000000003fd0 002fd0 000030 08  WA  0   0  8
+  [22] .got.plt          PROGBITS        0000000000004000 003000 000028 08  WA  0   0  8
+  [23] .data             PROGBITS        0000000000004028 003028 000010 00  WA  0   0  8
+  [24] .bss              NOBITS          0000000000004038 003038 000010 00  WA  0   0  4
+  [25] .comment          PROGBITS        0000000000000000 003038 000011 01  MS  0   0  1
+  [26] .symtab           SYMTAB          0000000000000000 003050 0006a8 18     27  50  8
+  [27] .strtab           STRTAB          0000000000000000 0036f8 0002e3 00      0   0  1
+  [28] .shstrtab         STRTAB          0000000000000000 0039db 000103 00      0   0  1
+</code></pre><p>.rodata  read only data</p>
+<h2 id="references">References</h2>
 <p>[1]<a href="https://linux.die.net/man/5/elf">https://linux.die.net/man/5/elf</a></p>
 <p>[2]<a href="https://elinux.org/Executable_and_Linkable_Format_(ELF)">https://elinux.org/Executable_and_Linkable_Format_(ELF)</a></p>
 <p>[3]<a href="ftp.openwatcom.org/devel/docs/elf-64-gen.pdf">ftp.openwatcom.org/devel/docs/elf-64-gen.pdf</a></p>
@@ -140,7 +167,7 @@
 
         <div class="post-info">
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>4 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>347 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-04-06 18:50 &#43;0800</p>
         </div>
@@ -153,6 +180,13 @@
                 </div>
 
                 <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://zsept.cn/posts/algorithm/fibnoacci/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">[Algorithm] Fibonacci</span>
+                            </a>
+                        </span>
                     
 
                     

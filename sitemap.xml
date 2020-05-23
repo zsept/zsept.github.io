@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zsept.cn/posts/linux_elf/</loc>
-    <lastmod>2020-04-06T18:50:55+08:00</lastmod>
+    <loc>https://zsept.cn/posts/algorithm/fibnoacci/</loc>
+    <lastmod>2020-05-05T21:53:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zsept.cn/posts/</loc>
+    <lastmod>2020-05-05T21:53:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zsept.cn/posts/linux_elf/</loc>
     <lastmod>2020-04-06T18:50:55+08:00</lastmod>
   </url>
   
@@ -45,6 +50,10 @@
   <url>
     <loc>https://zsept.cn/</loc>
     <lastmod>2020-04-04T12:35:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zsept.cn/posts/math/summary/</loc>
   </url>
   
   <url>

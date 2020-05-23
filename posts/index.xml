@@ -6,8 +6,64 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>z</copyright>
-        <lastBuildDate>Mon, 06 Apr 2020 18:50:55 +0800</lastBuildDate>
+        <lastBuildDate>Tue, 05 May 2020 21:53:12 +0800</lastBuildDate>
         <atom:link href="https://zsept.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>[Algorithm] Fibonacci</title>
+            <link>https://zsept.cn/posts/algorithm/fibnoacci/</link>
+            <pubDate>Tue, 05 May 2020 21:53:12 +0800</pubDate>
+            
+            <guid>https://zsept.cn/posts/algorithm/fibnoacci/</guid>
+            <description>Fibonacci 递归 uint64_t fibonacci(uint64_t n) { if (n &amp;gt; 1) { return fibonacci(n -1) + fibonacci(n -2); } else { return n; } } 非递归 uint64_t fibonacci_1(uint64_t n) { if (n &amp;lt; 2) { return n; } uint64_t fn = 0; uint64_t fn0 = 0; uint64_t fn1 = 1; uint64_t count = 2; while (count &amp;lt;= n) { fn = fn0 + fn1; fn0 = fn1; fn1 = fn; count++; } return fn; } 矩阵 std::pair&amp;lt;uint64_t, uint64_t&amp;gt; fibonacci_3(size_t n) { // 返回F_{n}和F_{n + 1}, 注意是对UINT64_MAX取模的结果.</description>
+            <content type="html"><![CDATA[<h2 id="fibonacci">Fibonacci</h2>
+<h3 id="递归">递归</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">uint64_t</span> <span style="color:#a6e22e">fibonacci</span>(<span style="color:#66d9ef">uint64_t</span> n)
+{
+    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#66d9ef">return</span> fibonacci(n <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> fibonacci(n <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">return</span> n;
+    }
+}
+</code></pre></div><h3 id="非递归">非递归</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">uint64_t</span> <span style="color:#a6e22e">fibonacci_1</span>(<span style="color:#66d9ef">uint64_t</span> n)
+{
+    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>) { <span style="color:#66d9ef">return</span> n; }
+
+    <span style="color:#66d9ef">uint64_t</span> fn  <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">uint64_t</span> fn0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">uint64_t</span> fn1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+    <span style="color:#66d9ef">uint64_t</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+    <span style="color:#66d9ef">while</span> (count <span style="color:#f92672">&lt;=</span> n) {
+        fn  <span style="color:#f92672">=</span> fn0 <span style="color:#f92672">+</span> fn1;
+        fn0 <span style="color:#f92672">=</span> fn1;
+        fn1 <span style="color:#f92672">=</span> fn;
+        count<span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">return</span> fn;
+}
+</code></pre></div><h3 id="矩阵">矩阵</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">std<span style="color:#f92672">::</span>pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint64_t</span>, <span style="color:#66d9ef">uint64_t</span><span style="color:#f92672">&gt;</span> fibonacci_3(size_t n)
+{
+    <span style="color:#75715e">// 返回F_{n}和F_{n + 1}, 注意是对UINT64_MAX取模的结果.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">auto</span> PF <span style="color:#f92672">=</span> fibonacci_3(n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>);   <span style="color:#75715e">// 基于递归求解.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">auto</span> t0 <span style="color:#f92672">=</span> PF.first;
+        <span style="color:#66d9ef">auto</span> t1 <span style="color:#f92672">=</span> PF.second;
+        <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#75715e">// 奇数情况.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">return</span> {t0 <span style="color:#f92672">*</span> t0 <span style="color:#f92672">+</span> t1 <span style="color:#f92672">*</span> t1,    (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> t0 <span style="color:#f92672">+</span> t1) <span style="color:#f92672">*</span> t1 };
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#66d9ef">return</span> {(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> t1 <span style="color:#f92672">-</span> t0) <span style="color:#f92672">*</span> t0,   t0 <span style="color:#f92672">*</span> t0 <span style="color:#f92672">+</span> t1 <span style="color:#f92672">*</span> t1 };
+        }
+    }
+
+    <span style="color:#66d9ef">return</span> {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>};
+}
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Linux ELF</title>
@@ -15,10 +71,41 @@
             <pubDate>Mon, 06 Apr 2020 18:50:55 +0800</pubDate>
             
             <guid>https://zsept.cn/posts/linux_elf/</guid>
-            <description>References [1]https://linux.die.net/man/5/elf
-[2]https://elinux.org/Executable_and_Linkable_Format_(ELF)
-[3]ftp.openwatcom.org/devel/docs/elf-64-gen.pdf</description>
-            <content type="html"><![CDATA[<h2 id="references">References</h2>
+            <description>ELF HEADER Section Headers: [Nr] Name Type Address Off Size ES Flg Lk Inf Al [ 0] NULL 0000000000000000 000000 000000 00 0 0 0 [ 1] .interp PROGBITS 00000000000002a8 0002a8 00001c 00 A 0 0 1 [ 2] .note.gnu.build-id NOTE 00000000000002c4 0002c4 000024 00 A 0 0 4 [ 3] .note.ABI-tag NOTE 00000000000002e8 0002e8 000020 00 A 0 0 4 [ 4] .gnu.hash GNU_HASH 0000000000000308 000308 00001c 00 A 5 0 8 [ 5] .</description>
+            <content type="html"><![CDATA[<h2 id="elf-header">ELF HEADER</h2>
+<pre><code>Section Headers:
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1] .interp           PROGBITS        00000000000002a8 0002a8 00001c 00   A  0   0  1
+  [ 2] .note.gnu.build-id NOTE           00000000000002c4 0002c4 000024 00   A  0   0  4
+  [ 3] .note.ABI-tag     NOTE            00000000000002e8 0002e8 000020 00   A  0   0  4
+  [ 4] .gnu.hash         GNU_HASH        0000000000000308 000308 00001c 00   A  5   0  8
+  [ 5] .dynsym           DYNSYM          0000000000000328 000328 0000d8 18   A  6   1  8
+  [ 6] .dynstr           STRTAB          0000000000000400 000400 0000ed 00   A  0   0  1
+  [ 7] .gnu.version      VERSYM          00000000000004ee 0004ee 000012 02   A  5   0  2
+  [ 8] .gnu.version_r    VERNEED         0000000000000500 000500 000040 00   A  6   2  8
+  [ 9] .rela.dyn         RELA            0000000000000540 000540 0000f0 18   A  5   0  8
+  [10] .rela.plt         RELA            0000000000000630 000630 000030 18  AI  5  22  8
+  [11] .init             PROGBITS        0000000000001000 001000 00001b 00  AX  0   0  4
+  [12] .plt              PROGBITS        0000000000001020 001020 000030 10  AX  0   0 16
+  [13] .text             PROGBITS        0000000000001050 001050 000205 00  AX  0   0 16
+  [14] .fini             PROGBITS        0000000000001258 001258 00000d 00  AX  0   0  4
+  [15] .rodata           PROGBITS        0000000000002000 002000 000005 00   A  0   0  4
+  [16] .eh_frame_hdr     PROGBITS        0000000000002008 002008 000044 00   A  0   0  4
+  [17] .eh_frame         PROGBITS        0000000000002050 002050 000118 00   A  0   0  8
+  [18] .init_array       INIT_ARRAY      0000000000003da8 002da8 000010 08  WA  0   0  8
+  [19] .fini_array       FINI_ARRAY      0000000000003db8 002db8 000008 08  WA  0   0  8
+  [20] .dynamic          DYNAMIC         0000000000003dc0 002dc0 000210 10  WA  6   0  8
+  [21] .got              PROGBITS        0000000000003fd0 002fd0 000030 08  WA  0   0  8
+  [22] .got.plt          PROGBITS        0000000000004000 003000 000028 08  WA  0   0  8
+  [23] .data             PROGBITS        0000000000004028 003028 000010 00  WA  0   0  8
+  [24] .bss              NOBITS          0000000000004038 003038 000010 00  WA  0   0  4
+  [25] .comment          PROGBITS        0000000000000000 003038 000011 01  MS  0   0  1
+  [26] .symtab           SYMTAB          0000000000000000 003050 0006a8 18     27  50  8
+  [27] .strtab           STRTAB          0000000000000000 0036f8 0002e3 00      0   0  1
+  [28] .shstrtab         STRTAB          0000000000000000 0039db 000103 00      0   0  1
+</code></pre><p>.rodata  read only data</p>
+<h2 id="references">References</h2>
 <p>[1]<a href="https://linux.die.net/man/5/elf">https://linux.die.net/man/5/elf</a></p>
 <p>[2]<a href="https://elinux.org/Executable_and_Linkable_Format_(ELF)">https://elinux.org/Executable_and_Linkable_Format_(ELF)</a></p>
 <p>[3]<a href="ftp.openwatcom.org/devel/docs/elf-64-gen.pdf">ftp.openwatcom.org/devel/docs/elf-64-gen.pdf</a></p>
@@ -414,6 +501,18 @@ call one#highlight('Search', 'eec900', '', 'underline')
 
 
 </code></pre>]]></content>
+        </item>
+        
+        <item>
+            <title></title>
+            <link>https://zsept.cn/posts/math/summary/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            
+            <guid>https://zsept.cn/posts/math/summary/</guid>
+            <description>1.3Blue1Grown https://space.bilibili.com/88461692/video?tid=0&amp;amp;page=4&amp;amp;keyword=&amp;amp;order=pubdate</description>
+            <content type="html"><![CDATA[<p>1.3Blue1Grown
+<a href="https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate">https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate</a></p>
+]]></content>
         </item>
         
     </channel>

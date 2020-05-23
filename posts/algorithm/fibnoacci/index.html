@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Fibonacci 递归 uint64_t fibonacci(uint64_t n) { if (n &amp;gt; 1) { return fibonacci(n -1) &#43; fibonacci(n -2); } else { return n; } } 非递归 uint64_t fibonacci_1(uint64_t n) { if (n &amp;lt; 2) { return n; } uint64_t fn = 0; uint64_t fn0 = 0; uint64_t fn1 = 1; uint64_t count = 2; while (count &amp;lt;= n) { fn = fn0 &#43; fn1; fn0 = fn1; fn1 = fn; count&#43;&#43;; } return fn; } 矩阵 std::pair&amp;lt;uint64_t, uint64_t&amp;gt; fibonacci_3(size_t n) { // 返回F_{n}和F_{n &#43; 1}, 注意是对UINT64_MAX取模的结果." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://zsept.cn/posts/algorithm/fibnoacci/" />
+
+
+    <title>
+        
+            [Algorithm] Fibonacci :: z`note 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.4ed50595e4097c0b1795067260a03be46790a115d1945eb2ac366715eba74218.css">
+
+
+
+
+<meta itemprop="name" content="[Algorithm] Fibonacci">
+<meta itemprop="description" content="Fibonacci 递归 uint64_t fibonacci(uint64_t n) { if (n &gt; 1) { return fibonacci(n -1) &#43; fibonacci(n -2); } else { return n; } } 非递归 uint64_t fibonacci_1(uint64_t n) { if (n &lt; 2) { return n; } uint64_t fn = 0; uint64_t fn0 = 0; uint64_t fn1 = 1; uint64_t count = 2; while (count &lt;= n) { fn = fn0 &#43; fn1; fn0 = fn1; fn1 = fn; count&#43;&#43;; } return fn; } 矩阵 std::pair&lt;uint64_t, uint64_t&gt; fibonacci_3(size_t n) { // 返回F_{n}和F_{n &#43; 1}, 注意是对UINT64_MAX取模的结果.">
+<meta itemprop="datePublished" content="2020-05-05T21:53:12&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-05T21:53:12&#43;08:00" />
+<meta itemprop="wordCount" content="156">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Algorithm] Fibonacci"/>
+<meta name="twitter:description" content="Fibonacci 递归 uint64_t fibonacci(uint64_t n) { if (n &gt; 1) { return fibonacci(n -1) &#43; fibonacci(n -2); } else { return n; } } 非递归 uint64_t fibonacci_1(uint64_t n) { if (n &lt; 2) { return n; } uint64_t fn = 0; uint64_t fn0 = 0; uint64_t fn1 = 1; uint64_t count = 2; while (count &lt;= n) { fn = fn0 &#43; fn1; fn0 = fn1; fn1 = fn; count&#43;&#43;; } return fn; } 矩阵 std::pair&lt;uint64_t, uint64_t&gt; fibonacci_3(size_t n) { // 返回F_{n}和F_{n &#43; 1}, 注意是对UINT64_MAX取模的结果."/>
+
+
+
+
+
+    <meta property="article:published_time" content="2020-05-05 21:53:12 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">...</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://zsept.cn/about">About</a></li><li><a href="https://zsept.cn/categories">Categories</a></li><li><a href="https://zsept.cn/posts">Posts</a></li><li><a href="https://zsept.cn/tags">Tags</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>One minute
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title">
+                <a href="https://zsept.cn/posts/algorithm/fibnoacci/">[Algorithm] Fibonacci</a>
+            </h1>
+
+            
+
+            <div class="post-content">
+                <h2 id="fibonacci">Fibonacci</h2>
+<h3 id="递归">递归</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">uint64_t</span> <span style="color:#a6e22e">fibonacci</span>(<span style="color:#66d9ef">uint64_t</span> n)
+{
+    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+        <span style="color:#66d9ef">return</span> fibonacci(n <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> fibonacci(n <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>);
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#66d9ef">return</span> n;
+    }
+}
+</code></pre></div><h3 id="非递归">非递归</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">uint64_t</span> <span style="color:#a6e22e">fibonacci_1</span>(<span style="color:#66d9ef">uint64_t</span> n)
+{
+    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>) { <span style="color:#66d9ef">return</span> n; }
+
+    <span style="color:#66d9ef">uint64_t</span> fn  <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">uint64_t</span> fn0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">uint64_t</span> fn1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+    <span style="color:#66d9ef">uint64_t</span> count <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+    <span style="color:#66d9ef">while</span> (count <span style="color:#f92672">&lt;=</span> n) {
+        fn  <span style="color:#f92672">=</span> fn0 <span style="color:#f92672">+</span> fn1;
+        fn0 <span style="color:#f92672">=</span> fn1;
+        fn1 <span style="color:#f92672">=</span> fn;
+        count<span style="color:#f92672">++</span>;
+    }
+    <span style="color:#66d9ef">return</span> fn;
+}
+</code></pre></div><h3 id="矩阵">矩阵</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">std<span style="color:#f92672">::</span>pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint64_t</span>, <span style="color:#66d9ef">uint64_t</span><span style="color:#f92672">&gt;</span> fibonacci_3(size_t n)
+{
+    <span style="color:#75715e">// 返回F_{n}和F_{n + 1}, 注意是对UINT64_MAX取模的结果.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">auto</span> PF <span style="color:#f92672">=</span> fibonacci_3(n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>);   <span style="color:#75715e">// 基于递归求解.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">auto</span> t0 <span style="color:#f92672">=</span> PF.first;
+        <span style="color:#66d9ef">auto</span> t1 <span style="color:#f92672">=</span> PF.second;
+        <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+            <span style="color:#75715e">// 奇数情况.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">return</span> {t0 <span style="color:#f92672">*</span> t0 <span style="color:#f92672">+</span> t1 <span style="color:#f92672">*</span> t1,    (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> t0 <span style="color:#f92672">+</span> t1) <span style="color:#f92672">*</span> t1 };
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#66d9ef">return</span> {(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> t1 <span style="color:#f92672">-</span> t0) <span style="color:#f92672">*</span> t0,   t0 <span style="color:#f92672">*</span> t0 <span style="color:#f92672">+</span> t1 <span style="color:#f92672">*</span> t1 };
+        }
+    }
+
+    <span style="color:#66d9ef">return</span> {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>};
+}
+</code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>156 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-05-05 21:53 &#43;0800</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h">Read other posts</span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://zsept.cn/posts/linux_elf/">
+                                <span class="button__text">Linux ELF</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span>z</span>
+            <span> <a href="https://zsept.cn/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>theme by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+
+
+
+    </body>
+</html>
