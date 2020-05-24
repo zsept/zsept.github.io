@@ -33,7 +33,8 @@ If there is such window, you are guaranteed that there will always be only one u
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
 </blockquote>
 <h2 id="code">Code</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// need fix
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
+<span style="color:#75715e">// need fix
 </span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdint.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
@@ -125,17 +126,21 @@ If there is such window, you are guaranteed that there will always be only one u
             <pubDate>Thu, 21 May 2020 20:38:12 +0800</pubDate>
             
             <guid>https://zsept.cn/posts/summary/</guid>
-            <description>Learning Metarials  3Blue1Grown  https://space.bilibili.com/88461692/video?tid=0&amp;amp;page=4&amp;amp;keyword=&amp;amp;order=pubdate
-leetcode  https://leetcode-cn.com</description>
-            <content type="html"><![CDATA[<h2 id="learning-metarials">Learning Metarials</h2>
-<ol>
-<li>3Blue1Grown</li>
+            <description>  3Blue1Grown
+https://space.bilibili.com/88461692/video?tid=0&amp;amp;page=4&amp;amp;keyword=&amp;amp;order=pubdate
+  leetcode
+https://leetcode-cn.com
+  </description>
+            <content type="html"><![CDATA[<ol>
+<li>
+<p>3Blue1Grown</p>
+<p><em><a href="https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate">https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate</a></em></p>
+</li>
+<li>
+<p>leetcode</p>
+<p><em><a href="https://leetcode-cn.com">https://leetcode-cn.com</a></em></p>
+</li>
 </ol>
-<p><a href="https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate">https://space.bilibili.com/88461692/video?tid=0&amp;page=4&amp;keyword=&amp;order=pubdate</a></p>
-<ol start="2">
-<li>leetcode</li>
-</ol>
-<p><a href="https://leetcode-cn.com">https://leetcode-cn.com</a></p>
 ]]></content>
         </item>
         
