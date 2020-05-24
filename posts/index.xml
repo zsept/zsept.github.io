@@ -6,8 +6,118 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>z</copyright>
-        <lastBuildDate>Thu, 21 May 2020 20:38:12 +0800</lastBuildDate>
+        <lastBuildDate>Sat, 23 May 2020 17:18:12 +0800</lastBuildDate>
         <atom:link href="https://zsept.cn/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>[leetcode] 76.minimum window substring</title>
+            <link>https://zsept.cn/posts/leetcode/76_minimum_window_substring/</link>
+            <pubDate>Sat, 23 May 2020 17:18:12 +0800</pubDate>
+            
+            <guid>https://zsept.cn/posts/leetcode/76_minimum_window_substring/</guid>
+            <description>Title  Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n). Example:
+Input: S = &amp;ldquo;ADOBECODEBANC&amp;rdquo;, T = &amp;ldquo;ABC&amp;rdquo; Output: &amp;ldquo;BANC&amp;rdquo;
+Note:
+If there is no such window in S that covers all characters in T, return the empty string &amp;ldquo;&amp;quot;. If there is such window, you are guaranteed that there will always be only one unique minimum window in S.</description>
+            <content type="html"><![CDATA[<h2 id="title">Title</h2>
+<blockquote>
+<p>Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
+Example:</p>
+<p>Input: S = &ldquo;ADOBECODEBANC&rdquo;, T = &ldquo;ABC&rdquo;
+Output: &ldquo;BANC&rdquo;</p>
+<p>Note:</p>
+<p>If there is no such window in S that covers all characters in T, return the empty string &ldquo;&quot;.
+If there is such window, you are guaranteed that there will always be only one unique minimum window in S.</p>
+<p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/minimum-window-substring
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h2 id="code">Code</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// need fix
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdint.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;map&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setStrFrequency</span>(std<span style="color:#f92672">::</span>string <span style="color:#f92672">&amp;</span>str, std<span style="color:#f92672">::</span>map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> map)
+{
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> ch:str) { map[ch]<span style="color:#f92672">++</span>; }
+}
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check_match</span>(std<span style="color:#f92672">::</span>map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>map_win, std<span style="color:#f92672">::</span>map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">&amp;</span>map_dst)
+{
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> it:map_dst) {
+        <span style="color:#66d9ef">if</span> (it.second <span style="color:#f92672">&gt;</span> map_win[it.first]) {
+            std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;chekc : &#34;</span> <span style="color:#f92672">&lt;&lt;</span> it.first <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> it.second <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> map_win[it.first] <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+            <span style="color:#66d9ef">return</span> false;
+        }
+    }
+    <span style="color:#66d9ef">return</span> true;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">test_minimum_window_substring</span>()
+{
+    std<span style="color:#f92672">::</span>string strS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ADOBECODEBANC&#34;</span>;
+    std<span style="color:#f92672">::</span>string strT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABC&#34;</span>;
+
+    std<span style="color:#f92672">::</span>map <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> map_t;
+    setStrFrequency(strT, map_t);
+
+    std<span style="color:#f92672">::</span>map <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> map_window;
+
+   <span style="color:#66d9ef">int</span> left  <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; 
+   <span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; 
+   <span style="color:#66d9ef">int</span> min_length <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+   <span style="color:#66d9ef">int</span> min_left <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+
+   <span style="color:#66d9ef">for</span> (; right <span style="color:#f92672">&lt;</span> strS.size(); ) {
+       <span style="color:#66d9ef">char</span> ch_right <span style="color:#f92672">=</span> strS[right];
+       <span style="color:#66d9ef">if</span> (map_t.find(ch_right) <span style="color:#f92672">==</span> map_t.end()) {
+           right<span style="color:#f92672">++</span>;
+           <span style="color:#66d9ef">continue</span>;
+       }
+       
+       <span style="color:#66d9ef">if</span> (map_window[ch_right] <span style="color:#f92672">&lt;</span> map_t[ch_right]) {
+           map_window[ch_right]<span style="color:#f92672">++</span>;
+           std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;right : &#34;</span> <span style="color:#f92672">&lt;&lt;</span> right <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span>  ch_right <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> map_window[ch_right] <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+       }
+
+       <span style="color:#66d9ef">if</span> (check_match(map_window, map_t) <span style="color:#f92672">&amp;&amp;</span> left <span style="color:#f92672">&lt;=</span> right) {
+           <span style="color:#66d9ef">if</span> (right <span style="color:#f92672">-</span> left <span style="color:#f92672">&lt;</span> min_length <span style="color:#f92672">||</span> min_length <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+               min_length <span style="color:#f92672">=</span> right <span style="color:#f92672">-</span> left <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+               min_left <span style="color:#f92672">=</span> left;
+           }
+
+           std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span> strS.substr(left, right <span style="color:#f92672">-</span> left <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+
+           <span style="color:#66d9ef">while</span>(left <span style="color:#f92672">&lt;=</span> right) {
+               <span style="color:#66d9ef">char</span> ch_left <span style="color:#f92672">=</span> strS[left];
+               map_window[ch_left]<span style="color:#f92672">--</span>;
+               left<span style="color:#f92672">++</span>;
+               <span style="color:#66d9ef">if</span> (check_match(map_window, map_t)) {
+                   <span style="color:#66d9ef">if</span> (right <span style="color:#f92672">-</span> left <span style="color:#f92672">&lt;</span> min_length <span style="color:#f92672">||</span> min_length <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                       min_length <span style="color:#f92672">=</span> right <span style="color:#f92672">-</span> left <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+                       min_left <span style="color:#f92672">=</span> left;
+                   }
+               }
+           }
+           <span style="color:#75715e">// continue;
+</span><span style="color:#75715e"></span>       }
+
+       std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span> right <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+       <span style="color:#f92672">++</span>right;
+       <span style="color:#75715e">// std::cout &lt;&lt; &#34;left &#34; &lt;&lt; left &lt;&lt; &#34; right &#34; &lt;&lt; right &lt;&lt; std::endl;
+</span><span style="color:#75715e"></span>   }
+
+   std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span> min_length <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+   std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span> strS.substr(min_left, min_length) <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+
+   <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Learning Metarials</title>
